@@ -1,0 +1,48 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 //DISPLAY 15.3 Interface for the Derived Class HourlyEmployee\
+//This is the header file hourlyemployee.h. \
+//This is the interface for the class HourlyEmployee.\
+#ifndef HOURLYEMPLOYEE_H\
+#define HOURLYEMPLOYEE_H\
+\
+#include <string>\
+#include "Employee.h"\
+\
+using namespace std;\
+\
+\
+class HourlyEmployee : public Employee \
+\{\
+    public:\
+		// Constructors\
+        HourlyEmployee( );\
+        HourlyEmployee(string the_name, string the_ssn,\
+                           double the_wage_rate, double the_hours);\
+\
+		// Accessors\
+        double get_rate( ) const;\
+        double get_hours( ) const;\
+\
+		// Mutators\
+        void set_rate(double new_wage_rate);\
+        void set_hours(double hours_worked);\
+\
+		// Virtual functions\
+		double get_net_pay() const override;\
+        void print_check( ) const override;\
+		istream& promptInput(istream& in, ostream& out) override;\
+\
+    private:\
+        double wage_rate; \
+        double hours;\
+\};\
+\
+\
+#endif //HOURLYMPLOYEE_H\
+}
